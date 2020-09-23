@@ -3,5 +3,9 @@ package easy
 import "path/filepath"
 
 func RootDir() string {
-	return filepath.Join("./")
+	root, err := filepath.Abs("./")
+	if err != nil {
+		return "."
+	}
+	return root
 }
