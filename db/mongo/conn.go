@@ -25,9 +25,9 @@ type MongoConf struct {
 
 func InitConn(c MongoConf) {
 	if c.User != "" {
-		mongoUri = fmt.Sprintf("mongodb://%s:%s", c.Host, c.Port)
-	} else {
 		mongoUri = fmt.Sprintf("mongodb://%s:%s@%s:%s/%s", c.User, c.Password, c.Host, c.Port, c.AuthDB)
+	} else {
+		mongoUri = fmt.Sprintf("mongodb://%s:%s", c.Host, c.Port)
 	}
 
 	client = getClient()
