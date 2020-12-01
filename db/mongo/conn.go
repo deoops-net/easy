@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"time"
 
+	"go.mongodb.org/mongo-driver/bson/primitive"
+
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"go.mongodb.org/mongo-driver/mongo/readpref"
@@ -21,6 +23,15 @@ type MongoConf struct {
 	AuthDB   string
 	User     string
 	Password string
+}
+
+// ObjectID create mongo ObjectId from string or create new one
+func ObjectID(id string) primitive.ObjectID {
+	if id == "" {
+		return primitive.NewObjectID()
+	}
+	oid, _ := primitive.ObjectIDFromHex(id)
+	return oid
 }
 
 func InitConn(c MongoConf) {
