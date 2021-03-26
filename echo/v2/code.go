@@ -41,9 +41,9 @@ const (
 	// 认证失败
 	StatusCodeUnauthorized                 = "40001" // RFC 7235, 3.1
 	// session失效
-	StatusCodePaymentRequired              = "40002" // RFC 7231, 6.5.2
+	//StatusCodePaymentRequired              = "40002" // RFC 7231, 6.5.2
 	// 缺少必要参数
-	StatusCodeForbidden                    = "40003" // RFC 7231, 6.5.3
+	StatusCodeParamsInvalid = "40003"
 	// StatusCodeNotFound                     = "404" // RFC 7231, 6.5.4
 	// 权限不足
 	StatusCodeMethodNotAllowed             = "40005" // RFC 7231, 6.5.5

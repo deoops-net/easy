@@ -22,6 +22,18 @@ func JsonRep(c echo.Context, result interface{}) error {
 	})
 }
 
+// 参数错误
+func JsonParamErr(c echo.Context, msg ...interface{}) error {
+	m, ok := (msg[0]).(string)
+	if !ok || m == "" {
+		m = "params missing or wrong types"
+	}
+	return c.JSON(http.StatusOK, Result{
+		Msg:  m,
+		Code: StatusCodeParamsInvalid,
+	})
+}
+
 // 资源重复创建
 func JsonDup(c echo.Context) error {
 	return c.JSON(http.StatusOK, Result{
