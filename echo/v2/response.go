@@ -22,6 +22,15 @@ func JsonRep(c echo.Context, result interface{}) error {
 	})
 }
 
+// 通用JSON错误返回
+func JsonError(c echo.Context, code, msg string) error {
+	return c.JSON(http.StatusOK, Result{
+		Msg:  msg,
+		Code: code,
+		Data: nil,
+	})
+}
+
 // 参数错误
 func JsonParamErr(c echo.Context, msg ...interface{}) error {
 	m, ok := (msg[0]).(string)
