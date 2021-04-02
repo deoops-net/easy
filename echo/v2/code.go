@@ -44,7 +44,8 @@ const (
 	//StatusCodePaymentRequired              = "40002" // RFC 7231, 6.5.2
 	// 缺少必要参数
 	StatusCodeParamsInvalid = "40003"
-	// StatusCodeNotFound                     = "404" // RFC 7231, 6.5.4
+	// 未找到资源
+	StatusCodeNotFound                     = "40004" // RFC 7231, 6.5.4
 	// 权限不足
 	StatusCodeMethodNotAllowed             = "40005" // RFC 7231, 6.5.5
 	// StatusCodeNotAcceptable                = "406" // RFC 7231, 6.5.6
