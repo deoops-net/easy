@@ -73,7 +73,7 @@ const (
 
 	// 内部错误
 	// 数据库异常
-	StatusCodeDataBaseError = "50000" // RFC 7231, 6.6.1
+	StatusCodeDatabaseError = "50000" // RFC 7231, 6.6.1
 	// IO 异常
 	StatusCodeIOError = "50001" // RFC 7231, 6.6.2
 	// 依赖服务异常

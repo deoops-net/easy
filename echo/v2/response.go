@@ -71,7 +71,7 @@ func JsonDup(c echo.Context) error {
 func JsonDBErr(c echo.Context) error {
 	return c.JSON(http.StatusOK, Result{
 		Msg:  "database error",
-		Code: StatusCodeDataBaseError,
+		Code: StatusCodeDatabaseError,
 	})
 }
 
