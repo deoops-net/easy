@@ -31,6 +31,14 @@ func JsonError(c echo.Context, code, msg string) error {
 	})
 }
 
+func JsonNewError(code, msg string) Result {
+	return Result{
+		Msg:  msg,
+		Code: code,
+		Data: nil,
+	}	
+}
+
 // 参数错误
 func JsonParamErr(c echo.Context, msg ...interface{}) error {
 	m, ok := (msg[0]).(string)
