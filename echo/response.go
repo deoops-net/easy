@@ -23,6 +23,14 @@ func JErr500(c echo.Context, err error) error {
 	})
 }
 
+func JErrRep(c echo.Context, err error, result interface{}) error {
+	return c.JSON(http.StatusInternalServerError, consts.Result{
+		Msg:  err.Error(),
+		Code: -1,
+		Data: result,
+	})
+}
+
 func JErr400(c echo.Context, err error) error {
 	return c.JSON(http.StatusInternalServerError, consts.HTTPErr{
 		Msg:  err.Error(),
