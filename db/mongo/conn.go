@@ -55,6 +55,7 @@ func getClient() *mongo.Client {
 	if os.Getenv("MONGO_RS_URI") != "" {
 		mongoUri = os.Getenv("MONGO_RS_URI")
 	}
+	fmt.Printf("MONGO CONNECTING TO %s\n", mongoUri)
 	client, err := mongo.NewClient(options.Client().ApplyURI(mongoUri))
 	if err != nil {
 		panic(err)
