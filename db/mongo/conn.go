@@ -3,6 +3,7 @@ package mongo
 import (
 	"context"
 	"fmt"
+	"os"
 	"time"
 
 	"go.mongodb.org/mongo-driver/bson/primitive"
@@ -51,6 +52,9 @@ func Table(name string) *mongo.Collection {
 
 // GetMongoDB ...
 func getClient() *mongo.Client {
+	if os.Getenv("MONGO_RS_URI") != "" {
+		mongoUri = os.Getenv("MONGO_RS_URI")
+	}
 	client, err := mongo.NewClient(options.Client().ApplyURI(mongoUri))
 	if err != nil {
 		panic(err)
